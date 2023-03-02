@@ -1,6 +1,6 @@
 "use strict";
 const letterList = document.getElementById("letter-list");
-const bla = document.getElementById("bla");
+const details = document.getElementById("details");
 let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 letters.forEach((letter) => {
   letterList.innerHTML += `
@@ -22,7 +22,6 @@ function getLetterList(event) {
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`)
     .then((res) => {
       if (res.status !== 200) {
-        console.log(res);
         throw new Error("Sorry.. application failed");
       }
       return res.json();
@@ -38,7 +37,6 @@ function getLetterList(event) {
         `;
       }
       data.drinks.forEach((drink) => {
-        console.log(drink);
         listEl.innerHTML += `
         <li>
         <button type="button" class="drop-down-item list-group-item list-group-item-action" aria-current="true" width="50"  data-drinkid="${drink.idDrink}" onClick="moreInfo(event)">
@@ -55,10 +53,8 @@ function getLetterList(event) {
 
 function moreInfo(event) {
   let drinkId = event.target.dataset.drinkid;
-  console.log(drinkId);
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
     .then((res) => {
-      console.log(res, "*****");
       if (res.status === 200) {
         return res.json();
       } else {
@@ -67,38 +63,33 @@ function moreInfo(event) {
     })
     .then((data) => {
       let drink = data.drinks[0];
-      console.log(data);
-
       let ingredients = [];
       for (let key in drink) {
         if (key.startsWith("strIngredient")) {
           if (drink[key]) {
-            console.log(drink[key]);
             ingredients.push(drink[key]);
           }
         }
       }
-      bla.innerHTML = `
-       <div class="info">
-                        <h1 class="modal-title fs-5">${drink.strDrink}</h1>
-                    <div class="modal-body">
-                    <p>${drink.strAlcoholic} ${drink.strCategory}</p>
-                    <img src="${drink.strDrinkThumb}" alt="${drink.strDrink} image">
+      details.innerHTML = `
+                        <h1 class="fs-5">${drink.strDrink}</h1>
+                    <div class="details-body">
+                    <p class="details-category">${drink.strAlcoholic} ${drink.strCategory}</p>
+                    <img class="details-img" src="${drink.strDrinkThumb}" alt="${drink.strDrink} image">
                     <p>${drink.strInstructions}</p>
 
                     <h2>Ingredients:</h2>
                     <ul class="ingredients">
                     ${ingredients
                       .map((item) => {
-                        return `<li>${item} <img src="https://www.thecocktaildb.com/images/ingredients/${item}.png"></li>`;
+                        return `<li>${item} <img class="ingredient-img" src="https://www.thecocktaildb.com/images/ingredients/${item}.png"></li>`;
                       })
                       .reduce((acc, curr) => acc + curr)}
                     <ul/>
                    
                     </div>
-                    </div>
       `;
-      bla.scrollIntoView();
+      details.scrollIntoView();
     })
     .catch((e) => console.log(e));
 }
