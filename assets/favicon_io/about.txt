@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Nanum Myeongjo
+- Font Author: Copyright  2010 NHN Corporation. All rights reserved. Font designed by FONTRIX.
+- Font Source: http://fonts.gstatic.com/s/nanummyeongjo/v20/9Btx3DZF0dXLMZlywRbVRNhxy1LreHQ8juyl.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
