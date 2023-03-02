@@ -1,0 +1,47 @@
+h1 {
+  padding-bottom: 50px;
+}
+button img {
+  width: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 3px;
+  transition: all 0.3s;
+  z-index: 1;
+}
+button {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: flex-start; */
+  min-height: 50px;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+button:hover img {
+  width: 100px;
+  /* bottom: -50%; */
+  z-index: 10;
+  border-radius: 50% 5px 50% 50%;
+}
+.list-group {
+  max-width: 700px;
+  margin: auto;
+}
+.list-group ul {
+  max-width: 600px;
+}
+#bla {
+  margin: auto;
+  max-width: 700px;
+}
+.ingredients {
+}
+
+.info img {
+  width: 300px;
+}
+.ingredients img {
+  width: 50px;
+}
