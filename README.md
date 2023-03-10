@@ -6,7 +6,7 @@
 
 ![alt app screenshot](./assets/screenshot2.png)
 
-2022-03-02 homework
+2023-03-02 homework
 Fetch and use data from external API
 
 🌐 **Site published at**: [https://codevivi.github.io/using-api-cocktails](https://codevivi.github.io/using-api-cocktails)
