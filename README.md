@@ -2,16 +2,14 @@
 
 ## 📋 About
 
-<!-- ![alt app screenshot](./assets/images/screenshot.png) -->
+![alt app screenshot](./assets/screenshot.png)
+
+![alt app screenshot](./assets/screenshot2.png)
 
 2022-03-02 homework
 Fetch and use data from external API
 
 🌐 **Site published at**: [https://codevivi.github.io/using-api-cocktails](https://codevivi.github.io/using-api-cocktails)
-
-📈 **Status**:Working on
-
-<!-- ⚠️ check/add issues on issues tab -->
 
 🎯 **Goals:**
 
